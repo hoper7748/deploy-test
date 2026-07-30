@@ -18,14 +18,16 @@ jobs:
           ls
           mkdir test-item
           ls
-      
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v7.3.0
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5.6.0
+      - name: Checkout
+        uses: actions/checkout@v6.1.0
+        with:
+          ref: main  # 브랜치 선택 해당 브랜치를 체크아웃 하겠다.
 
-
-
-
-    
-
-
-
-
-
+      - name: "세번째 작업"
+        run: |
+          cd ~/
+          ls
